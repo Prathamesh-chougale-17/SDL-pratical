@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notification Popup</title>
+    <style>
+      /* Style for the notification container */
+      .notification-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        z-index: 9999;
+        display: none; /* Hide the container by default */
+      }
+
+      /* Style for the notification close button */
+      .close-btn {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Notification container -->
+    <div class="notification-container" id="notificationContainer">
+      <span class="close-btn" onclick="closeNotification()">&times;</span>
+      <p>This is a notification popup!</p>
+    </div>
+
+    <!-- Button to trigger the notification -->
+    <button onclick="showNotification()">Show Notification</button>
+
+    <script>
+      // Function to show the notification
+      function showNotification() {
+        var notification = document.getElementById("notificationContainer");
+        notification.style.display = "block"; // Display the notification container
+      }
+
+      // Function to close the notification
+      function closeNotification() {
+        var notification = document.getElementById("notificationContainer");
+        notification.style.display = "none"; // Hide the notification container
+      }
+    </script>
+  </body>
+</html>
